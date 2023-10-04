@@ -11,6 +11,5 @@ public interface ContatoRepository {
     
     Resultado<Contato> cadastrar(String nome, String telefone);
     Resultado<ArrayList<Contato>> listar();
-    Resultado<ArrayList<Contato>> filtrarNome(String inicio);
 
 }

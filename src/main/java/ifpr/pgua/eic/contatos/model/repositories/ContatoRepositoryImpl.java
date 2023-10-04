@@ -21,13 +21,5 @@ public class ContatoRepositoryImpl implements ContatoRepository{
     public Resultado<ArrayList<Contato>> listar() {
         return Resultado.erro("Implementar!");
     }
-
-    @Override
-    public Resultado<ArrayList<Contato>> filtrarNome(String inicio) {
-        return Resultado.erro("Implementar!");
-    }
-    
-
-
-
+  
 }

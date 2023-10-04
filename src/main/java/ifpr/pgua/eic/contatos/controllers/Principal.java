@@ -30,9 +30,6 @@ public class Principal implements Initializable{
     private TextField tfTelefone;
 
     @FXML
-    private TextField tfFiltro;
-
-    @FXML
     private TableView<Contato> tbContatos;
 
     @FXML
@@ -53,22 +50,13 @@ public class Principal implements Initializable{
         String telefone = tfTelefone.getText();
 
         Resultado<Contato> resultado = Resultado.erro("Implementar!");
+        
+        
         atualizar();
+        
         mostrarMensagem(resultado);
     }
 
-
-    @FXML
-    private void filtrar(KeyEvent evt){
-        if(!tfFiltro.getText().isBlank() || !tfFiltro.getText().isEmpty()){
-            
-            Resultado<ArrayList<Contato>> resultado = Resultado.erro("Implementar!");
-
-            if(resultado.foiSucesso()){
-                atualizarTabela(resultado.comoSucesso().getObj());
-            }
-        }
-    }
 
     @FXML
     private void limpar(){

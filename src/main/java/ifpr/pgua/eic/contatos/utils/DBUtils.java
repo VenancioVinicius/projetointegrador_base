@@ -29,8 +29,8 @@ public class DBUtils {
     }
 
     public static boolean checkDataBase(FabricaConexoes fabrica){
-        try{
-            Connection con = fabrica.getConnection();
+        try(Connection con = fabrica.getConnection()){
+            
 
             PreparedStatement stm = con.prepareStatement("SELECT name FROM sqlite_master WHERE type='table' AND name=?");
 
@@ -39,7 +39,6 @@ public class DBUtils {
             ResultSet rs = stm.executeQuery();
 
             if(rs.next()){
-                con.close();
                 return true;
             }
             return false;
@@ -53,9 +52,8 @@ public class DBUtils {
     }
 
     public static void createDataBase(FabricaConexoes fabrica){
-        try{
-            Connection con = fabrica.getConnection();
-
+        try(Connection con = fabrica.getConnection()){
+            
             Statement stm = con.createStatement();
 
             stm.execute("CREATE TABLE IF NOT EXISTS contatos (" + //
@@ -72,12 +70,11 @@ public class DBUtils {
     }
 
     public static void resetDataBase(FabricaConexoes fabrica){
-        try{
-            Connection con = fabrica.getConnection();
-
+        try(Connection con = fabrica.getConnection()){
+            
             Statement stm = con.createStatement();
 
-            stm.executeUpdate("DROP TABLE contatos");
+            stm.executeUpdate("DROP TABLE IF EXISTS contatos");
             stm.executeUpdate("CREATE TABLE IF NOT EXISTS contatos (" + //
                     "    id INTEGER PRIMARY KEY AUTOINCREMENT," + //
                     "    nome varchar(255) NOT NULL," + //

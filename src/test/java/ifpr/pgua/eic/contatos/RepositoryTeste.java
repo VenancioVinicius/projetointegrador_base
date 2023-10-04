@@ -126,35 +126,6 @@ public class RepositoryTeste {
         assertTrue(lista.containsAll(listaResultado),"O conteúdo das listas deveria ser iguais");
     }
 
-    @Test
-    @DisplayName("Consegue listar contatos iniciando por um nome")
-    public void teste5(){
-        
-        List<Contato> lista = gerarListaContatos(5);
-        
-        List<Contato> filtro = new ArrayList<>();
-        filtro.add(new Contato("Maria Teste 1", "4567"));
-        filtro.add(new Contato("Maria Teste 2", "45678"));
-        lista.addAll(filtro);
-
-        ContatoDAO dao = new JDBCContatoDAO(FabricaConexoes.getInstance());
-
-        for(Contato c:lista){
-            dao.criar(c);
-        }
-
-        ContatoDAO dao2 = new JDBCContatoDAO(FabricaConexoes.getInstance());
-        ContatoRepository repository = new ContatoRepositoryImpl(dao2);
-
-        Resultado<ArrayList<Contato>> resultado = repository.filtrarNome("Maria");
-        System.out.println(resultado.getMsg());
-        assertTrue(resultado.foiSucesso(),"O resultado deveria ser sucesso!");
-        
-        ArrayList<Contato> listaResultado = resultado.comoSucesso().getObj();
-        assertEquals(filtro.size(),listaResultado.size(),"O tamanho das listas deveriam ser iguais!");
-        assertTrue(filtro.containsAll(listaResultado),"O conteúdo das listas deveria ser iguais");
-    }
-
-    
+     
 
 }

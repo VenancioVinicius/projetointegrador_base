@@ -179,28 +179,4 @@ public class GUITest {
         }
     }
 
-    @Test
-    @DisplayName("Ao inserir um valor a tabela é filtrada")
-    public void cadastroTest5(FxRobot robot) {
-        String[] nomes = {"Maria","Chico","Zé","Zé Roberto"};
-        for(int i=0;i<4;i++){
-            robot.clickOn(idTextFieldNome).write(nomes[i]);
-            robot.clickOn(idTextFieldTelefone).write("041-"+i);
-
-            robot.clickOn(LabeledMatchers.hasText("Adicionar"));
-            Node dialogPane = robot.lookup(".dialog-pane").query();
-            Node bt = robot.from(dialogPane).lookup(".button").queryButton();
-            robot.clickOn(bt); 
-            robot.clickOn(LabeledMatchers.hasText("Limpar"));
-        }
-
-        robot.clickOn(idTextFieldFiltro).write("Z");
-
-        TableView<Contato> tableView = robot.lookup(idTableView).queryTableView();
-
-        assertEquals(2,tableView.getItems().size(),"Deveriam haver 02 itens na tabela!");
-
-    }
-
-
 }

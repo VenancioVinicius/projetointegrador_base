@@ -24,10 +24,6 @@
             <Button text="Limpar" onAction="#limpar"/>
         </HBox>
     </GridPane>
-    <HBox spacing="5.0">
-        <Label text="Filtro por nome:"/>
-        <TextField fx:id="tfFiltro" onKeyTyped="#filtrar"/>
-    </HBox>
     <TableView fx:id="tbContatos">
         <columns>
 
