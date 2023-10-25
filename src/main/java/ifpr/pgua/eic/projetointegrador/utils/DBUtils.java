@@ -1,4 +1,4 @@
-package ifpr.pgua.eic.contatos.utils;
+package ifpr.pgua.eic.projetointegrador.utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import ifpr.pgua.eic.contatos.model.daos.FabricaConexoes;
+import ifpr.pgua.eic.projetointegrador.model.daos.FabricaConexoes;
 
 public class DBUtils {
     

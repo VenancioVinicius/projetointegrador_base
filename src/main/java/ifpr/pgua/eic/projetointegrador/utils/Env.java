@@ -1,4 +1,4 @@
-package ifpr.pgua.eic.contatos.utils;
+package ifpr.pgua.eic.projetointegrador.utils;
 
 import io.github.cdimascio.dotenv.Dotenv;
 

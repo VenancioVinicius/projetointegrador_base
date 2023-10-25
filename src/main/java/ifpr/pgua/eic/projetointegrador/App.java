@@ -1,9 +1,7 @@
-package ifpr.pgua.eic.contatos;
+package ifpr.pgua.eic.projetointegrador;
 
-import ifpr.pgua.eic.contatos.controllers.Principal;
-import ifpr.pgua.eic.contatos.model.daos.FabricaConexoes;
-import ifpr.pgua.eic.contatos.model.repositories.ContatoRepositoryImpl;
-import ifpr.pgua.eic.contatos.utils.DBUtils;
+import ifpr.pgua.eic.projetointegrador.controllers.Principal;
+import ifpr.pgua.eic.projetointegrador.utils.DBUtils;
 import io.github.hugoperlin.navigatorfx.BaseAppNavigator;
 import io.github.hugoperlin.navigatorfx.ScreenRegistryFXML;
 
@@ -21,10 +19,6 @@ public class App extends BaseAppNavigator {
         // TODO Auto-generated method stub
         super.init();
 
-        if(!DBUtils.checkDataBase(FabricaConexoes.getInstance())){
-            DBUtils.createDataBase(FabricaConexoes.getInstance());
-        }
-
     }
 
 
@@ -38,7 +32,7 @@ public class App extends BaseAppNavigator {
     @Override
     public String getAppTitle() {
         // TODO Auto-generated method stub
-        return "Lista de Contatos";
+        return "Projeto Integrador";
     }
 
     @Override

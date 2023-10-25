@@ -1,10 +1,10 @@
-package ifpr.pgua.eic.contatos.model.daos;
+package ifpr.pgua.eic.projetointegrador.model.daos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import ifpr.pgua.eic.contatos.utils.Env;
+import ifpr.pgua.eic.projetointegrador.utils.Env;
 
 public class FabricaConexoes {
 
