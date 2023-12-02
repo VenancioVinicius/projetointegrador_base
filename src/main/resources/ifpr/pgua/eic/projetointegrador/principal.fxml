@@ -1,31 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx" 
-      xmlns:fx="http://javafx.com/fxml" 
-      prefHeight="480" prefWidth="640"
-      fx:controller="ifpr.pgua.eic.projetointegrador.controllers.Principal"
-      stylesheets="@./css/estilo.css"
-      styleClass="screenroot"
-      >
+<BorderPane prefHeight="480" prefWidth="640" styleClass="screenroot" stylesheets="@./css/estilo.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.projetointegrador.controllers.Principal">
 
     <padding>
-        <Insets topRightBottomLeft="20"/>
+        <Insets topRightBottomLeft="20" />
     </padding>
 
     <left>
-        <VBox spacing="5.0" alignment="TOP_CENTER">
+        <VBox alignment="TOP_CENTER" spacing="5.0">
             <padding>
-                <Insets topRightBottomLeft="20"/>
+                <Insets topRightBottomLeft="20" />
             </padding>
-            <Button text="Ação" onAction="#acao"  prefWidth="200"/>
+            <Button onAction="#operador" prefWidth="200" text="Operador" />
             
         </VBox>
     </left>
