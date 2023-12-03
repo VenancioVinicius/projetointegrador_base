@@ -2,10 +2,14 @@ package ifpr.pgua.eic.projetointegrador;
 
 import ifpr.pgua.eic.projetointegrador.controllers.Principal;
 import ifpr.pgua.eic.projetointegrador.controllers.SelecionarOperador;
+import ifpr.pgua.eic.projetointegrador.controllers.CadastrarMaterial;
 
 import ifpr.pgua.eic.projetointegrador.model.daos.OperadorDAO;
 import ifpr.pgua.eic.projetointegrador.model.daos.JDBCOperadorDAO;
 import ifpr.pgua.eic.projetointegrador.model.repositories.RepositorioOperador;
+import ifpr.pgua.eic.projetointegrador.model.daos.MaterialDAO;
+import ifpr.pgua.eic.projetointegrador.model.daos.JDBCMaterialDAO;
+import ifpr.pgua.eic.projetointegrador.model.repositories.RepositorioMaterial;
 
 import ifpr.pgua.eic.projetointegrador.model.daos.FabricaConexoes;
 
@@ -20,6 +24,8 @@ public class App extends BaseAppNavigator {
 
     private OperadorDAO operadorDAO = new JDBCOperadorDAO(FabricaConexoes.getInstance());
     private RepositorioOperador repositorioOperador = new RepositorioOperador(operadorDAO);
+    private MaterialDAO materialDAO = new JDBCMaterialDAO(FabricaConexoes.getInstance());
+    private RepositorioMaterial repositorioMaterial = new RepositorioMaterial(materialDAO);
     
     public static void main(String[] args) {
         launch();
@@ -50,6 +56,7 @@ public class App extends BaseAppNavigator {
     public void registrarTelas() {
         registraTela("PRINCIPAL", new ScreenRegistryFXML(App.class, "principal.fxml", o->new Principal()));
         registraTela("SELECIONAROPERADOR", new ScreenRegistryFXML(App.class, "selecionar_operador.fxml", o->new SelecionarOperador(repositorioOperador)));
+        registraTela("CADASTRARMATERIAL", new ScreenRegistryFXML(App.class, "cadastrar_material.fxml", o->new CadastrarMaterial(repositorioMaterial)));
     }
 
 }

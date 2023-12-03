@@ -12,6 +12,8 @@ public class Principal{
     void operador(ActionEvent event){
         App.pushScreen("SELECIONAROPERADOR");
     }
+
+    @FXML
     void material(ActionEvent event){
         App.pushScreen("CADASTRARMATERIAL");
     }
