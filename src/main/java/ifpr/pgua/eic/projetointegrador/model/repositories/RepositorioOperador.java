@@ -13,6 +13,14 @@ public class RepositorioOperador {
             this.dao = dao;
       }
 
+      public Resultado CadastrarOperador(String operador_selecionado){
+            if(operador_selecionado.isEmpty() || operador_selecionado.isEmpty()){
+                  return Resultado.erro("Nenhum selecionado");
+            }
+
+            return dao.atualizar(operador_selecionado);
+      }
+
       public Resultado SelecionarOperador(){
             return dao.listar();
       }

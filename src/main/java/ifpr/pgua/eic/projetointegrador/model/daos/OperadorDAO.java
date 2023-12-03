@@ -6,6 +6,7 @@ import ifpr.pgua.eic.projetointegrador.model.entities.Operador;
 
 public interface OperadorDAO {
       
+      Resultado atualizar(String operador_selecionado);
       Resultado listar();
 
 }

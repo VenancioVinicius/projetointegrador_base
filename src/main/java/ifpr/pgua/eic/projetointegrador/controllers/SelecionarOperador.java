@@ -27,6 +27,28 @@ public class SelecionarOperador implements Initializable{
             this.repositorio = repositorio;
       }
 
+      @FXML
+      void voltar(ActionEvent event) {
+            App.popScreen();
+      }
+
+      @FXML
+      void salvar(ActionEvent event){
+            String operador_selecionado = String.valueOf(listaOperador.getSelectionModel().getSelectedItem());
+
+            Resultado resultado = repositorio.CadastrarOperador(operador_selecionado);
+
+            Alert alert;
+
+            if(resultado.foiErro()){
+                  alert = new Alert(AlertType.ERROR, resultado.getMsg());
+            }else{
+                  alert = new Alert(AlertType.INFORMATION, resultado.getMsg());
+            }
+            
+            alert.showAndWait();
+      }
+
       @Override
       public void initialize(URL arg0, ResourceBundle arg1){
 

@@ -23,8 +23,7 @@ public class JDBCOperadorDAO implements OperadorDAO{
       @Override 
       public Resultado listar() {
 
-            try (Connection con = fabrica.getConnection()) {
-                  
+            try (Connection con = fabrica.getConnection()) {          
                   PreparedStatement pstm = con.prepareStatement("SELECT * FROM operators");
 
                   ResultSet rs = pstm.executeQuery();
@@ -35,7 +34,7 @@ public class JDBCOperadorDAO implements OperadorDAO{
                         String id = rs.getString("id");
                         String nome_operador = rs.getString("nome_operador");
                         String id_material_e_1_1 = rs.getString("id_material_e_1_1");
-                        String quant_material_e_1_1 = rs.getString("quant_material_e_1_1");
+                        Integer quant_material_e_1_1 = rs.getInt("quant_material_e_1_1");
 
                         Operador personagem = new Operador(id, nome_operador, id_material_e_1_1, quant_material_e_1_1);
                         lista.add(personagem);
@@ -44,6 +43,34 @@ public class JDBCOperadorDAO implements OperadorDAO{
                   return Resultado.sucesso("Lista de Operadores", lista);
 
             } catch (SQLException e) {
+                  return Resultado.erro(e.getMessage());
+            }
+      }
+
+      @Override
+      public Resultado atualizar(String id){
+
+            try(Connection con = fabrica.getConnection()){
+                  PreparedStatement pstm = con.prepareStatement("SELECT id_material_e_1_1,quant_material_e_1_1 FROM operators WHERE nome_operador=?");
+                  PreparedStatement ps = con.prepareStatement("update materials set quantidade = ? where id_material = ?");
+                  
+                  pstm.setString(1, id);
+
+                  ResultSet rs = pstm.executeQuery();
+                  
+                  while(rs.next()){
+
+                        String id_material_e_1_1 = rs.getString("id_material_e_1_1");
+                        Integer quant_material_e_1_1 = rs.getInt("quant_material_e_1_1");
+
+                        ps.setInt(1, quant_material_e_1_1);
+                        ps.setString(2, id_material_e_1_1);
+
+                        ps.executeUpdate();
+                  }
+                  return Resultado.sucesso(id, null);
+
+            }catch (SQLException e) {
                   return Resultado.erro(e.getMessage());
             }
 

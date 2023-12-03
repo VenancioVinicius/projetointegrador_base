@@ -17,6 +17,7 @@
                 <Insets topRightBottomLeft="20" />
             </padding>
             <Button onAction="#operador" prefWidth="200" text="Operador" />
+         <Button onAction="#material" prefWidth="200" text="Material" />
             
         </VBox>
     </left>

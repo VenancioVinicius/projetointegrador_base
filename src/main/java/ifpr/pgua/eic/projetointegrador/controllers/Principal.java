@@ -12,4 +12,7 @@ public class Principal{
     void operador(ActionEvent event){
         App.pushScreen("SELECIONAROPERADOR");
     }
+    void material(ActionEvent event){
+        App.pushScreen("CADASTRARMATERIAL");
+    }
 }
