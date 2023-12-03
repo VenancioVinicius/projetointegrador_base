@@ -47,4 +47,21 @@ public class JDBCMaterialDAO implements MaterialDAO {
 
       }
 
+      public Resultado atualizar(String material_selecionado, Integer inv_quant){
+
+            try(Connection con = fabrica.getConnection()) {
+                  PreparedStatement pstm = con.prepareStatement("update materials set inventario_quant = ? where nome_material = ?");
+
+                  pstm.setInt(1, inv_quant);
+                  pstm.setString(2, material_selecionado);
+
+                  pstm.executeUpdate();
+
+                  return Resultado.sucesso(material_selecionado, null);
+            } catch (SQLException e) {
+                  return Resultado.erro(e.getMessage());
+            }
+
+      }
+
 }

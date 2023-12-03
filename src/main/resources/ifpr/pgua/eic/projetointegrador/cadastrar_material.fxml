@@ -13,12 +13,12 @@
       <HBox layoutX="346.0" layoutY="272.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
          <children>
             <Button mnemonicParsing="false" onAction="#voltar" text="Voltar" />
-            <Button mnemonicParsing="false" text="Salvar" />
+            <Button mnemonicParsing="false" onAction="#salvar" text="Salvar" />
          </children>
          <padding>
             <Insets left="40.0" top="40.0" />
          </padding>
       </HBox>
-      <TextField layoutX="372.0" layoutY="188.0" />
+      <TextField fx:id="tfQuantidade" layoutX="372.0" layoutY="188.0" />
    </children>
 </Pane>

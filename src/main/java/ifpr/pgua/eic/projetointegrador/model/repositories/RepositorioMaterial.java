@@ -12,7 +12,15 @@ public class RepositorioMaterial {
             this.dao = dao;
       }
 
-      public Resultado CadastrarMaterial(){
+      public Resultado CadastrarMaterial(String material_selecionado, Integer inventario_quant){
+            if(material_selecionado.isEmpty() || material_selecionado.isEmpty()){
+                  return Resultado.erro("Nenhum valor inserido");
+            }
+
+            return dao.atualizar(material_selecionado, inventario_quant);
+      }
+
+      public Resultado ListarMaterial(){
             return dao.listar();
       }
 
