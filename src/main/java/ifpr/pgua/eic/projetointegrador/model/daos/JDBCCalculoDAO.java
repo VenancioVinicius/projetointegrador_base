@@ -57,6 +57,7 @@ public class JDBCCalculoDAO implements CalculoDAO{
 
                   pstm.executeUpdate();
 
+                  App.popScreen();
                   return Resultado.sucesso("Tabela resetado", null);
             } catch (SQLException e) {
                   return Resultado.erro(e.getMessage());

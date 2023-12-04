@@ -1,6 +1,7 @@
 package ifpr.pgua.eic.projetointegrador;
 
 import ifpr.pgua.eic.projetointegrador.controllers.Principal;
+
 import ifpr.pgua.eic.projetointegrador.controllers.SelecionarOperador;
 import ifpr.pgua.eic.projetointegrador.controllers.CadastrarMaterial;
 import ifpr.pgua.eic.projetointegrador.controllers.ResultadoCalculo;
@@ -19,7 +20,6 @@ import ifpr.pgua.eic.projetointegrador.model.repositories.RepositorioCalculo;
 
 import ifpr.pgua.eic.projetointegrador.model.daos.FabricaConexoes;
 
-import ifpr.pgua.eic.projetointegrador.utils.DBUtils;
 import io.github.hugoperlin.navigatorfx.BaseAppNavigator;
 import io.github.hugoperlin.navigatorfx.ScreenRegistryFXML;
 

@@ -4,13 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.github.hugoperlin.results.Resultado;
 
 import ifpr.pgua.eic.projetointegrador.model.entities.Operador;
-import ifpr.pgua.eic.projetointegrador.utils.DBUtils;
 
 public class JDBCOperadorDAO implements OperadorDAO{
       
