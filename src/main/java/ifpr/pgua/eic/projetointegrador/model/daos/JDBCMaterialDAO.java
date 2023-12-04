@@ -57,6 +57,26 @@ public class JDBCMaterialDAO implements MaterialDAO {
 
                   pstm.executeUpdate();
 
+                  PreparedStatement ps = con.prepareStatement("SELECT quantidade, inventario_quant FROM materials WHERE nome_material = ?");
+
+                  ps.setString(1, material_selecionado);
+
+                  PreparedStatement pst = con.prepareStatement("update materials set diferenca = ? where nome_material = ?");
+                  
+                  ResultSet rs = ps.executeQuery();
+
+                  while (rs.next()) {
+                        Integer quantidade = rs.getInt("quantidade");
+                        Integer inventario_quant = rs.getInt("inventario_quant");
+                        
+                        Integer resultado = inventario_quant - quantidade;
+                        pst.setInt(1, resultado);
+                        pst.setString(2, material_selecionado);
+
+                        pst.executeUpdate();
+
+                  }
+
                   return Resultado.sucesso(material_selecionado, null);
             } catch (SQLException e) {
                   return Resultado.erro(e.getMessage());

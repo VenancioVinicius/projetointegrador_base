@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.projetointegrador.controllers.SelecionarOperador">
+   <children>
+      <ListView fx:id="listaMaterial" layoutX="25.0" layoutY="29.0" prefHeight="343.0" prefWidth="322.0" />
+      <HBox layoutX="346.0" layoutY="272.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+            <Button mnemonicParsing="false" text="Limpar" />
+         </children>
+         <padding>
+            <Insets left="40.0" top="40.0" />
+         </padding>
+      </HBox>
+   </children>
+</Pane>
