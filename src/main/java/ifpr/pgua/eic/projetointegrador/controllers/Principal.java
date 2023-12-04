@@ -17,4 +17,9 @@ public class Principal{
     void material(ActionEvent event){
         App.pushScreen("CADASTRARMATERIAL");
     }
+
+    @FXML
+    void resultado(ActionEvent event){
+        App.pushScreen("RESULTADOCALCULO");
+    }
 }

@@ -18,6 +18,7 @@
             </padding>
             <Button onAction="#operador" prefWidth="200" text="Operador" />
          <Button onAction="#material" prefWidth="200" text="Material" />
+         <Button onAction="#resultado" prefWidth="200" text="Resultado" />
             
         </VBox>
     </left>
