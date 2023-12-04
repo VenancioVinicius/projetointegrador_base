@@ -76,7 +76,7 @@ public class JDBCMaterialDAO implements MaterialDAO {
 
                   }
 
-                  return Resultado.sucesso(material_selecionado, null);
+                  return Resultado.sucesso("Cadastrado com Sucesso", null);
             } catch (SQLException e) {
                   return Resultado.erro(e.getMessage());
             }

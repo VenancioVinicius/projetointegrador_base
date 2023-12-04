@@ -66,7 +66,7 @@ public class JDBCOperadorDAO implements OperadorDAO{
 
                         ps.executeUpdate();
                   }
-                  return Resultado.sucesso(id, null);
+                  return Resultado.sucesso("Selecionado com Sucesso", null);
 
             }catch (SQLException e) {
                   return Resultado.erro(e.getMessage());

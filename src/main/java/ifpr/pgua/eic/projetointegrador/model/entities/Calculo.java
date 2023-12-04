@@ -58,7 +58,7 @@ public class Calculo{
 
       @Override
       public String toString(){
-            return nome_material + " diferença de " + diferenca;
+            return nome_material + " diferença de " + diferenca + " com o inventário";
       }
 
 }
